@@ -221,42 +221,49 @@ table.listings_table th.toggle {
 table.listings_table tr.booked td {
   background-color: #ddffdd;
 }
-/* line 16, ../../app/stylesheets/_tables.sass */
-table.listings_table tr.booked td .booking_name {
+/* line 17, ../../app/stylesheets/_tables.sass */
+table.listings_table tr .booking_name {
   font-size: 0.8em;
   font-weight: bold;
   margin-bottom: 2px;
   white-space: no-wrap;
 }
-/* line 21, ../../app/stylesheets/_tables.sass */
-table.listings_table tr.booked td .booking_details {
+/* line 22, ../../app/stylesheets/_tables.sass */
+table.listings_table tr .booking_details {
   font-size: 0.8em;
   font-weight: bold;
   margin-bottom: 2px;
   white-space: no-wrap;
 }
-/* line 27, ../../app/stylesheets/_tables.sass */
+/* line 28, ../../app/stylesheets/_tables.sass */
 table.listings_table td .details {
   color: #333333;
   font-size: 0.7em;
   text-transform: uppercase;
   line-height: 1.2em;
 }
-/* line 32, ../../app/stylesheets/_tables.sass */
+/* line 33, ../../app/stylesheets/_tables.sass */
 table.listings_table td.toggle {
   text-align: center;
 }
-/* line 34, ../../app/stylesheets/_tables.sass */
+/* line 35, ../../app/stylesheets/_tables.sass */
 table.listings_table tr.even td {
   background-color: #eeeeee;
 }
-/* line 36, ../../app/stylesheets/_tables.sass */
+/* line 37, ../../app/stylesheets/_tables.sass */
 table.listings_table tr.empty td {
   background: #eeeeee;
   text-align: center;
   font-size: 0.7em;
   color: #666666;
   text-transform: uppercase;
+}
+/* line 43, ../../app/stylesheets/_tables.sass */
+table.listings_table tr.date td {
+  font-weight: bold;
+  border-top: 10px white solid;
+  background: #dddddd;
+  font-size: 0.9em;
 }
 
 /* line 1, ../../app/stylesheets/_forms.sass */

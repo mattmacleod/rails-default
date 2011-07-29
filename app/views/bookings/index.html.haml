@@ -1,0 +1,17 @@
+%h1 Bookings
+
+%table.listings_table#booking_list
+	%thead
+		%tr
+			%th Event
+			%th Booking
+	- @bookings.each do |date, bookings|
+		%tr.date
+			%td{ :colspan => 2 }= date.strftime("%A %d %B")
+		- bookings.each do |booking|
+			%tr
+				%td= link_to booking.performance.event.title, event_path(booking.performance.event)
+				%td 
+					.booking_name= booking.writer.name
+					.booking_details= booking.performance.starts_at.strftime("%A %d, %H:%M%p")
+				

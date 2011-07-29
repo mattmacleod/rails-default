@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
   
+  def index
+    @bookings = Booking.all.group_by{|b| b.performance.starts_at.to_date }.to_a.sort_by{|a|a[0]}
+  end
+  
   def check_writer
     @performance = Performance.find( params[:performance_id] )
     @writer = Writer.find( params[:writer_id] )    
