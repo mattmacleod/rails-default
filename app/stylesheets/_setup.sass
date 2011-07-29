@@ -1,0 +1,40 @@
+
+//	Base colours
+//****************************************************************************
+
+$color_blue: #0236b8 !default
+$color_green: #74b61d !default
+$color_red: #b60000 !default
+$color_yellow: #ff0 !default
+
+// Fonts and sizes
+//***************************************************************************/
+$base_font_size: 	12px !default
+$font_face_base: 	Helvetica, Arial, sans-serif !default
+$font_face_serif: 	"Georgia", Times, serif !default
+$font_face_heading: $font_face_base !default
+
+// Compass setup
+//***************************************************************************/
+$experimental-support-for-svg: true
+
+
+// ???
+//***************************************************************************/
+.clear
+     clear: both
+
+.clearfix
+     display: block
+     &:after
+          content: "."
+          clear: both
+          display: block
+          visibility: hidden
+          height: 0
+          font-size: 1px
+
+     * html &
+          display: block
+          height: 1%
+

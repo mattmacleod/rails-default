@@ -1,10 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.0.9'
+gem "meta_where", "1.0.4"
 
 # Essentials
-gem "haml"
-gem "jammit"
+gem "haml", "3.1.2"
+gem "sass", "3.1.2"
+gem "compass", "0.11.5"
+gem "jammit", "0.6.0"
+
+gem "will_paginate", "3.0.pre2"
 
 group :development do
   gem "fastthread"

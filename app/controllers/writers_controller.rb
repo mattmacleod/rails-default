@@ -1,0 +1,2 @@
+class WritersController < ApplicationController
+end

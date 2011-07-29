@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Railsapp::Application.load_tasks
+FestSchedule::Application.load_tasks
