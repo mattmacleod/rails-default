@@ -1,0 +1,10 @@
+%h1 Writers
+
+%table.listings_table#writer_list
+	%thead
+		%tr
+			%th Writer
+	%tbody
+		- @writers.each do |writer|
+			%tr
+				%td= link_to writer.name, writer_path(writer)

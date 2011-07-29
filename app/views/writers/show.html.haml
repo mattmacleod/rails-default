@@ -1,4 +1,4 @@
-%h1 Bookings
+%h1 Writer: #{ @writer.name }
 
 %table.listings_table#booking_list
 	%thead
@@ -13,6 +13,4 @@
 				%tr
 					%td= link_to booking.performance.event.title, event_path(booking.performance.event)
 					%td 
-						.booking_name= booking.writer.name
 						.booking_details= booking.performance.starts_at.strftime("%A %d, %H:%M%p")
-				
