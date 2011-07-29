@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   
   rescue_from ActiveRecord::RecordNotFound, :with => :do_404_error
   def do_404_error
+    render :nothing => true, :status => 404 and return if request.xhr?  
     redirect_to "/404.html"
     return
   end

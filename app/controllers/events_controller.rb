@@ -9,4 +9,10 @@ class EventsController < ApplicationController
     render :partial => "list" and return if request.xhr?
   end
   
+  def toggle_image
+    @event = Event.find(params[:id])
+    @event.toggle!(:has_pic)
+    render :text => @event.has_pic?, :status => 200
+  end
+  
 end

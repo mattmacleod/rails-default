@@ -20,6 +20,19 @@ fest_schedule.search = {
 			$("input.text", this).addClass("loading");
 			this.timer = setTimeout(fest_schedule.search.submit_search, 500);
 		});
+		
+		$("a.toggle_link").live("click", function(){
+			var _link = $(this);
+			$.post( $(this).attr("href"), {}, function(data){
+				if( data=="true" ){
+					_link.removeClass("false").addClass("true");
+				} else {
+					_link.removeClass("true").addClass("false");
+				}
+			});
+			return false;
+		});
+		
 	},
 	
 	submit_search: function(){

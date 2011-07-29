@@ -8,17 +8,8 @@
 %table#event_list.listings_table
 	%thead
 		%tr
-			%th Picture?
+			%th.toggle Pic?
 			%th Event name
 			%th Booked?
-	%tbody
-	
-		- if @events.blank?
-			%tr.empty
-				%td{ :colspan => 3 }
-					- if params[:q]
-						No matches. Enter another search term.
-					- else
-						Enter a search term above to find events.
-						
+	%tbody		
 		= render "list"
