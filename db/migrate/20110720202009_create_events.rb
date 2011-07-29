@@ -5,6 +5,9 @@ class CreateEvents < ActiveRecord::Migration
       t.string :category
       t.boolean :scheduled, :default => false
       t.boolean :has_pic, :default => false
+      t.string :cached_venues
+      t.string :cached_times
+      t.string :cached_dates
       t.timestamps
     end
   end

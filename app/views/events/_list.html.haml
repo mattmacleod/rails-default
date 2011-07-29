@@ -1,0 +1,10 @@
+- @events.each do |event|
+	%tr{ :class => [(event.scheduled? ? :booked : :unbooked ), cycle(:odd, :even)].join(" ")}
+		%td= event.has_pic?
+		%td
+			.title= link_to(event.title, event_path(event.id))
+			.details= [:cached_venues, :cached_dates, :cached_times].map{|a| event.send(a) }.compact.join(", ")
+		%td
+			- if event.scheduled? && (booking = event.performances.map{|p| p.bookings}.flatten.first)
+				.booking_name= booking.writer.name
+				.booking_details= booking.performance.strftime("%A %d, %H:%M%p")

@@ -1,0 +1,24 @@
+%h1 Events
+
+%form#event_search_form.search_form{ :method => :get }
+	%fieldset
+		= label_tag :q, "Search events"
+		= text_field_tag :q, params[:q], :class => "text"
+		
+%table#event_list.listings_table
+	%thead
+		%tr
+			%th Picture?
+			%th Event name
+			%th Booked?
+	%tbody
+	
+		- if @events.blank?
+			%tr.empty
+				%td{ :colspan => 3 }
+					- if params[:q]
+						No matches. Enter another search term.
+					- else
+						Enter a search term above to find events.
+						
+		= render "list"

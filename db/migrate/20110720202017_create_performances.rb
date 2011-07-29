@@ -7,7 +7,7 @@ class CreatePerformances < ActiveRecord::Migration
       t.string :venue
       t.timestamps
     end
-    add_index :event_id
+    add_index :performances, :event_id
   end
 
   def self.down
