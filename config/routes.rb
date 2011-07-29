@@ -9,6 +9,9 @@ FestSchedule::Application.routes.draw do
   post "/event/:id/toggle_image" => "events#toggle_image", :as => :event_toggle_image
   
   resources :bookings do 
+    collection do
+      get "check_writer" => "bookings#check_writer", :as => :check_writer
+    end
     member do
       put "toggle_submitted" => "bookings#toggle_submitted", :as => :toogle_submitted
     end

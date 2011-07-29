@@ -3,6 +3,7 @@ fest_schedule = {};
 $(document).ready(function(){
 
 	fest_schedule.search.init();
+	fest_schedule.booking.init();
 	
 });
 
@@ -41,6 +42,44 @@ fest_schedule.search = {
 			$("input.text").removeClass("loading");
 		});	
 		
+	}
+	
+};
+
+
+fest_schedule.booking = {
+	
+	init: function(){
+	
+		// Setup booking process
+		$("#performance_select input").change(function(){
+			if( $("#performance_select input:checked").length>0){
+				$("#writer_select").show();
+				$("#writer_select select").change();
+			} else {
+				$("#writer_select").hide();
+			}
+		}).change();
+		
+		// Handle writer select
+		$("#writer_select select").change(function(){
+			if( $(this).val()!=""){
+				$.get( "/bookings/check_writer", { performance_id: $("#performance_select input:checked").val(), writer_id: $(this).val()}, function(data){
+					$("#writer_data").html( data );
+					$("#confirm_booking").show();
+				});
+			} else {
+				$("#confirm_booking").hide();
+			}
+		}).change();
+
+		$("#confirm_booking input").click(function(){
+			if($("p.overbooked, p.doublebooked").length > 0){
+				return confirm("Are you sure you want to make this booking? The selected writer is overbooked or double-booked!");
+			} else {
+				return true
+			}
+		});
 	}
 	
 }

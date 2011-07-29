@@ -1,0 +1,38 @@
+%h1 Event: #{ @event.title }
+
+- if @event.scheduled?
+	- booking = @event.performances.map(&:bookings).flatten.first
+	%p.intro
+		This show is booked for 
+		%strong
+			#{ booking.writer.name }
+		on
+		%strong
+			#{ booking.performance.starts_at.strftime("%A %d %B at %H:%M%p") }
+			
+		= link_to "Delete booking", booking_path( booking ), :method => :delete, :confirm => "Are you sure you want to remove this booking?"
+- else
+	
+	%p.intro This show is not currently scheduled
+	
+	%h2 Create a booking
+	
+	= form_for :booking, :url => bookings_path, :method => :post do |f|
+		%fieldset.col_1.booking_form#performance_select
+			%legend Choose a performance
+			.options
+				- @event.performances.each do |p|
+					.row
+						=f.radio_button :performance_id, p.id
+						=f.label :performace_id, p.starts_at.strftime("%a %d %b, %H:%M%p")
+			
+		%fieldset.col_2.booking_form#writer_select
+			%legend Choose a writer
+			.options
+				= f.select(:writer_id, @writers.map{|w| [w.name, w.id]}, :include_blank => true)
+				#writer_data
+
+		%fieldset.col_2.booking_form#confirm_booking
+			%legend Confirm booking
+			.options
+				= f.submit( "Create booking", :name => nil )

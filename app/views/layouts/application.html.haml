@@ -28,4 +28,5 @@
 					%li= link_to "Writers", writers_path, :class => (:active if controller.controller_name=="writers")
 		#main_wrapper	
 			#main_content
+				= flash_message
 				= yield

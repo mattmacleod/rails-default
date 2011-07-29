@@ -9,6 +9,14 @@ class EventsController < ApplicationController
     render :partial => "list" and return if request.xhr?
   end
   
+  def show
+    @event = Event.find(params[:id])
+    unless @event.scheduled?
+      @booking = Booking.new
+      @writers = Writer.order(:name)
+    end 
+  end
+  
   def toggle_image
     @event = Event.find(params[:id])
     @event.toggle!(:has_pic)

@@ -15,6 +15,6 @@
 		%td
 			- if event.scheduled? && (booking = event.performances.map{|p| p.bookings}.flatten.first)
 				.booking_name= booking.writer.name
-				.booking_details= booking.performance.strftime("%A %d, %H:%M%p")
+				.booking_details= booking.performance.starts_at.strftime("%A %d, %H:%M%p")
 			- else
 				.booking_none No booking

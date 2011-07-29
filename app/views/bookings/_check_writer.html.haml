@@ -1,0 +1,8 @@
+%p{ :class => (:overbooked if @writer.bookings.count >= @writer.review_limit )} #{ @writer.name } has a review limit of #{ @writer.review_limit } and is currently booked for #{ @writer.bookings.count } show(s)
+%p{ :class => (:doublebooked if @booked_performances.count >0 )}
+	This writer is
+	- if @booked_performances.count > 0
+		booked to see another show at the selected time
+	- else 
+		is not booked to see any other shows at this time
+		

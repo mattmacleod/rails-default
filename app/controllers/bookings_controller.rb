@@ -1,2 +1,32 @@
 class BookingsController < ApplicationController
+  
+  def check_writer
+    @performance = Performance.find( params[:performance_id] )
+    @writer = Writer.find( params[:writer_id] )    
+    @booked_performances = @writer.bookings.booked_at( @performance.starts_at, @performance.ends_at )
+    render :partial => "check_writer"
+  end
+  
+  
+  def create
+    @booking = Booking.new( params[:booking] )
+    if @booking.save
+      flash[:notice] = "Booking saved"
+      redirect_to bookings_path and return
+    else
+      flash[:warning] = "Booking invalid!"
+      redirect_to :back and return
+    end
+  end
+  
+  def destroy
+    @booking = Booking.find(params[:id])
+    if @booking.destroy
+      flash[:notice] = "Booking destroyed"
+    else
+      flash[:warning] = "Could not destroy booking"
+    end
+    redirect_to :back
+  end
+  
 end
