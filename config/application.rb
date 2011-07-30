@@ -4,7 +4,7 @@ require 'rails/all'
 
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
-module FestSchedule
+module Railsapp
   class Application < Rails::Application
     
     config.generators do |g|
@@ -17,7 +17,5 @@ module FestSchedule
 
     config.filter_parameters += [:password]
     
-    config.middleware.use "PDFKit::Middleware", :print_media_type => true, :page_size => "A4"
-     
   end
 end

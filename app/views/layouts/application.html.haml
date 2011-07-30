@@ -11,22 +11,12 @@
 		%meta{ :content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible" }/
 		%meta{ :content => "width=device-width, initial-scale=1.0", :name => "viewport" }/
 				
-		%title Fest Scheduling Tool
+		%title Railsapp
 
-		= include_stylesheets :default, :media => :all
+		= include_stylesheets :default
 		= include_javascripts :default
 		= csrf_meta_tag
 		
 	%body{ :lang => :en }
-		#header
-			#header_wrapper
-				#main_title Fest scheduling tool
-				%ul#main_nav
-					%li= link_to "Home", root_path, :class => (:active if controller.controller_name=="welcome")
-					%li= link_to "Events", events_path, :class => (:active if controller.controller_name=="events")
-					%li= link_to "Bookings", bookings_path, :class => (:active if controller.controller_name=="bookings")
-					%li= link_to "Writers", writers_path, :class => (:active if controller.controller_name=="writers")
-		#main_wrapper	
-			#main_content
-				= flash_message
-				= yield
+		#main_content
+			= yield
