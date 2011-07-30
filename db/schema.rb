@@ -33,13 +33,6 @@ ActiveRecord::Schema.define(:version => 20110720205923) do
     t.datetime "updated_at"
   end
 
-  create_table "issues", :force => true do |t|
-    t.string   "title"
-    t.datetime "print_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "performances", :force => true do |t|
     t.integer  "event_id"
     t.datetime "starts_at"
@@ -53,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20110720205923) do
 
   create_table "writers", :force => true do |t|
     t.string   "name"
+    t.integer  "review_limit", :default => 0
+    t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

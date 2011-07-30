@@ -13,6 +13,8 @@ gem "will_paginate", "3.0.pre2"
 
 gem "pdfkit", "0.5.2"
 
+gem 'mysql2',       '~> 0.2.6'
+
 group :development do
   gem "fastthread"
   gem "rails3-generators"

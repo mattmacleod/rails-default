@@ -124,6 +124,7 @@ GEM
     mongrel (1.2.0.pre2)
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
+    mysql2 (0.2.11)
     open4 (1.1.0)
     pdfkit (0.5.2)
     polyglot (0.3.1)
@@ -212,6 +213,7 @@ DEPENDENCIES
   meta_where (= 1.0.4)
   metric_fu
   mongrel (= 1.2.0.pre2)
+  mysql2 (~> 0.2.6)
   pdfkit (= 0.5.2)
   rails (= 3.0.9)
   rails3-generators

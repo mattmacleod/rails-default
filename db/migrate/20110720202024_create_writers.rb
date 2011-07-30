@@ -3,6 +3,7 @@ class CreateWriters < ActiveRecord::Migration
     create_table :writers do |t|
       t.string :name
       t.integer :review_limit, :default => 0
+      t.text :notes
       t.timestamps
     end
   end
