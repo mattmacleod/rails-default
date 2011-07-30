@@ -1,16 +1,17 @@
 %h1 Bookings
 
 %table.listings_table#booking_list
-	%thead
-		%tr
-			%th Event
-			%th Booking
 	%tbody
+		- if @bookings.blank?
+			%tr.empty
+				%td{ :colspan => 3 }
+					There are no bookings
 		- @bookings.each do |date, bookings|
 			%tr.date
-				%td{ :colspan => 2 }= date.strftime("%A %d %B")
+				%td{ :colspan => 3 }= date.strftime("%A %d %B")
 			- bookings.each do |booking|
 				%tr
+					%td.toggle= link_to(booking.performance.event.has_pic?, event_toggle_image_path(booking.performance.event), :class => "toggle_link #{booking.performance.event.has_pic?}")
 					%td= link_to booking.performance.event.title, event_path(booking.performance.event)
 					%td 
 						.booking_name= booking.writer.name

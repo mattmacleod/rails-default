@@ -1,16 +1,19 @@
 %h1 Writer: #{ @writer.name }
+%p.intro #{ @writer.name } is currently booked to see #{ @writer.bookings.count} shows of their total #{ @writer.review_limit }
 
 %table.listings_table#booking_list
-	%thead
-		%tr
-			%th Event
-			%th Booking
-	%tbody
+	%tbody	
+		- if @bookings.blank?
+			%tr.empty
+				%td{ :colspan => 2 }
+					There are no bookings
 		- @bookings.each do |date, bookings|
 			%tr.date
 				%td{ :colspan => 2 }= date.strftime("%A %d %B")
 			- bookings.each do |booking|
 				%tr
-					%td= link_to booking.performance.event.title, event_path(booking.performance.event)
-					%td 
-						.booking_details= booking.performance.starts_at.strftime("%A %d, %H:%M%p")
+					%td{ :style => "width: 150px"}
+						.booking_details #{ booking.performance.starts_at.strftime("%H:%M%p") }&mdash;#{ booking.performance.ends_at.strftime("%H:%M%p") }
+					%td
+						.title= link_to booking.performance.event.title, event_path(booking.performance.event)
+						.details= booking.performance.venue

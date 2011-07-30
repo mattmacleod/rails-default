@@ -4,7 +4,9 @@
 	%thead
 		%tr
 			%th Writer
+			%th Bookings
 	%tbody
 		- @writers.each do |writer|
 			%tr
 				%td= link_to writer.name, writer_path(writer)
+				%td Booked to see #{ writer.bookings.count } of #{ writer.review_limit } shows

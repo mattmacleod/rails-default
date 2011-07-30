@@ -16,6 +16,7 @@ fest_schedule.search = {
 		
 		$("form.search_form input.text").attr("autocomplete", "off");
 		
+		$("form.search_form").submit(function(){ fest_schedule.search.submit_search(); return false;});
 		$("form.search_form").keyup(function(){
 			clearTimeout(this.timer);
 			$("input.text", this).addClass("loading");

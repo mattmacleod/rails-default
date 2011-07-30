@@ -118,11 +118,6 @@ body {
   margin: 0 auto;
 }
 
-/* line 23, ../../app/stylesheets/_layout.sass */
-#main_content {
-  overflow: auto;
-}
-
 /* line 1, ../../app/stylesheets/_text.sass */
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
