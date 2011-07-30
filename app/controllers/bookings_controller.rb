@@ -7,7 +7,9 @@ class BookingsController < ApplicationController
   def check_writer
     @performance = Performance.find( params[:performance_id] )
     @writer = Writer.find( params[:writer_id] )    
-    @booked_performances = @writer.bookings.booked_at( @performance.starts_at, @performance.ends_at )
+    @booked_performances = @writer.bookings.booked_at( @performance.starts_at, @performance.ends_at ).map(&:performance)
+    @before_performances = @writer.bookings.booked_at( @performance.starts_at-30.minutes, @performance.ends_at ).map(&:performance)
+    @after_performances = @writer.bookings.booked_at( @performance.starts_at, @performance.ends_at + 30.minutes ).map(&:performance)
     render :partial => "check_writer"
   end
   

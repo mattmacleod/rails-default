@@ -135,23 +135,25 @@ h2 {
   font-size: 1.5em;
   font-weight: bold;
   margin: 1em 0;
+  padding: 5px;
+  background-color: #dddddd;
 }
 
-/* line 14, ../../app/stylesheets/_text.sass */
+/* line 16, ../../app/stylesheets/_text.sass */
 p.intro {
   margin: 20px 0;
 }
-/* line 16, ../../app/stylesheets/_text.sass */
+/* line 18, ../../app/stylesheets/_text.sass */
 p.intro strong {
   font-weight: bold;
 }
 
-/* line 19, ../../app/stylesheets/_text.sass */
+/* line 21, ../../app/stylesheets/_text.sass */
 a {
   color: #3366ff;
   text-decoration: none;
 }
-/* line 22, ../../app/stylesheets/_text.sass */
+/* line 24, ../../app/stylesheets/_text.sass */
 a:hover {
   text-decoration: underline;
 }
@@ -340,12 +342,19 @@ fieldset.booking_form .row {
 /* line 55, ../../app/stylesheets/_forms.sass */
 #writer_data p {
   font-size: 0.8em;
-  margin: 5px 0;
+  margin: 10px 0;
+  line-height: 1.2em;
 }
-/* line 58, ../../app/stylesheets/_forms.sass */
-#writer_data p.overbooked, #writer_data p.doublebooked {
+/* line 59, ../../app/stylesheets/_forms.sass */
+#writer_data p.overbooked, #writer_data p.doublebooked, #writer_data p.nearbooked {
   background: #ffbbbb;
   padding: 5px;
+}
+/* line 62, ../../app/stylesheets/_forms.sass */
+#writer_data p.overbooked strong, #writer_data p.doublebooked strong, #writer_data p.nearbooked strong {
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
 }
 
 /* line 2, ../../app/stylesheets/_flash.sass */

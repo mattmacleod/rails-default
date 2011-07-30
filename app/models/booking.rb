@@ -5,7 +5,7 @@ class Booking < ActiveRecord::Base
   
   class << self
     def booked_at( start_time, end_time )
-      includes(:performance).where("(starts_at <= ? AND ends_at >= ?)", end_time, start_time)
+      joins(:performance).where("(starts_at <= ? AND ends_at >= ?)", end_time, start_time)
     end
   end
 

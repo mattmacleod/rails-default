@@ -75,8 +75,8 @@ fest_schedule.booking = {
 		}).change();
 
 		$("#confirm_booking input").click(function(){
-			if($("p.overbooked, p.doublebooked").length > 0){
-				return confirm("Are you sure you want to make this booking? The selected writer is overbooked or double-booked!");
+			if($("p.overbooked, p.doublebooked, p.nearbooked").length > 0){
+				return confirm("Are you sure you want to make this booking? The selected writer may be over-booked!");
 			} else {
 				return true
 			}

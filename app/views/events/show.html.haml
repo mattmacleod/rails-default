@@ -14,7 +14,10 @@
 - else
 	
 	%p.intro This show is not currently scheduled
-	
+	%p.intro
+		Venue:
+		%strong= @event.performances.first.venue
+		
 	%h2 Create a booking
 	
 	= form_for :booking, :url => bookings_path, :method => :post do |f|
