@@ -1,6 +1,8 @@
 %h1 Writer: #{ @writer.name }
 %p.intro #{ @writer.name } is currently booked to see #{ @writer.bookings.count} shows of their total #{ @writer.review_limit }
 
+=link_to "Download PDF", {:format => :pdf}, :class => :pdf
+
 %table.listings_table#booking_list
 	%tbody	
 		- if @bookings.blank?

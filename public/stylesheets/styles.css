@@ -369,3 +369,20 @@ div.flash_warning {
 div.flash_notice {
   background-color: #74b61d;
 }
+
+@media print {
+  /* line 2, ../../app/stylesheets/_print.sass */
+  #header {
+    display: none;
+  }
+
+  /* line 5, ../../app/stylesheets/_print.sass */
+  p.intro {
+    display: none;
+  }
+
+  /* line 9, ../../app/stylesheets/_print.sass */
+  a.pdf {
+    display: none;
+  }
+}

@@ -11,6 +11,8 @@ gem "jammit", "0.6.0"
 
 gem "will_paginate", "3.0.pre2"
 
+gem "pdfkit", "0.5.2"
+
 group :development do
   gem "fastthread"
   gem "rails3-generators"
